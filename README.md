@@ -18,6 +18,7 @@ Within the main_python.py file you see:
 1. read_csv: This function returns the dataframe of the csv file we are trying to read. We use encoding="ISO-8859-1", delimiter=";" to ensure we import the data set correctly and have it clean for analysing.
 2. generalise_data: This function uses the describe function to give us the statistical information. The describe function used doesn't provide us with a median therefore we have appended the median value to our final result. We pass in the dataframe and column on which we would like to obtain all the statistical information. 
 3. line_graph_visualisation: This function generates a line graph to visualize the relationship between two variables from a DataFrame.
+4. bar_graph_visualisation: This function generates a bar graph for data visualisation purposes.
 
 ## Check test errors
 Test code `make test`
@@ -31,4 +32,7 @@ Test code `make test`
 ## Data Visualisation 
 
 <img width="902" alt="Screenshot 2024-09-08 at 9 44 14 AM" src="https://github.com/user-attachments/assets/56f67d1c-bc80-4851-afce-534b278a6628">
+
+<img width="962" alt="Screenshot 2024-09-08 at 2 51 41 PM" src="https://github.com/user-attachments/assets/2bd9d88f-933d-4e4a-90f4-51e3aa270c3a">
+
 

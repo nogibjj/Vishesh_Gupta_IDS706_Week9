@@ -28,6 +28,16 @@ def line_graph_visualisation(df, x_axis, y_axis, title, xlabel, ylabel):
     plt.grid(True)
     plt.show()
 
+def bar_graph_visualisation(df, title, xlabel, ylabel, legend):
+    df.plot(kind='bar', stacked=False, colormap='Set2', figsize=(10, 6))
+    
+    plt.title(title)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+
+    # Show the plot
+    plt.legend(title=legend)
+    plt.show()
 
 nba_data_file = read_csv_file("2023-2024 NBA Player Stats - Regular.csv")
 
@@ -43,4 +53,13 @@ grouped_data["avg_point_per_player"] = (
     grouped_data["Total_Points"] / grouped_data["Player_Count"]
 )
 
+grouped_multiple_data = nba_data_file.groupby(["Pos", "Tm"], as_index=False).agg(
+    Total_Points=("PTS", "sum"),  # Sum of points per position
+    Player_Count=("Pos", "count"),  # Count of players per position
+)
+
+pivot_df = grouped_multiple_data.pivot(index='Tm', columns='Pos', values='Total_Points').fillna(0)
+
 line_graph_visualisation(grouped_data, 'Pos', 'avg_point_per_player',  "Average Points by Player Position", "Player Position", "Average Points")
+
+bar_graph_visualisation(pivot_df, 'Total Points by Team', 'Team',  'Total Points', 'Position')

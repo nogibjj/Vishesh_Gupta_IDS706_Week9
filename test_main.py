@@ -2,7 +2,7 @@
 Test File
 """
 
-from main_python import read_csv_file, generalise_data, line_graph_visualisation
+from main_python import read_csv_file, generalise_data, line_graph_visualisation, bar_graph_visualisation
 import pandas as pd
 
 # string IO helps create a csv file for testing
@@ -57,7 +57,29 @@ def test_plot_line_graph():
 
     assert plot_success
 
+def test_bar_graph_visualisation():
+    csv_data = """Category,Value1,Value2
+                  A,10,20
+                  B,15,25
+                  C,20,30"""
+    test_df = pd.read_csv(StringIO(csv_data))
+
+    # Pivot the DataFrame for plotting
+    pivot_df = test_df.set_index('Category')
+
+    try:
+        # Test plot, but not displaying it
+        plt.figure()
+        bar_graph_visualisation(pivot_df, 'Test: Values by Category', 'Category', 'Value', 'Values')
+        plot_success = True
+    except Exception as e:
+        plot_success = False
+        print(f"Plot failed: {e}")
+
+    assert plot_success
+
 if __name__ == "__main__":
     test_read_csv_file()
     test_describe_column()
     test_plot_line_graph()
+    test_bar_graph_visualisation()
