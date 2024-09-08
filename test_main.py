@@ -34,6 +34,7 @@ def test_describe_column():
     # Check if the description contains expected values
     assert description.loc["mean"].values[0] == 2
     assert description.loc["count"].values[0] == 3
+    assert description.loc["median"].values[0] == 2
 
 
 def test_plot_line_graph():

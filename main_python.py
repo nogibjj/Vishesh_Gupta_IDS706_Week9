@@ -11,7 +11,10 @@ def read_csv_file(csv):
 
 
 def generalise_data(general_df, col):
-    return general_df[[col]].describe()
+    describe_value =  general_df[[col]].describe()
+    median_value = general_df[[col]].median()
+    describe_value.loc['median'] = median_value
+    return describe_value
 
 
 def line_graph_visualisation(df, x_axis, y_axis, title, xlabel, ylabel):
@@ -29,7 +32,7 @@ def line_graph_visualisation(df, x_axis, y_axis, title, xlabel, ylabel):
 nba_data_file = read_csv_file("2023-2024 NBA Player Stats - Regular.csv")
 
 # get all statistical information about the Age column
-generalise_data(nba_data_file, "Age")
+data_summary = generalise_data(nba_data_file, "Age")
 
 grouped_data = nba_data_file.groupby("Pos", as_index=False).agg(
     Total_Points=("PTS", "sum"),  # Sum of points per position
