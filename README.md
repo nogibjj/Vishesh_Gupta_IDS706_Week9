@@ -1,7 +1,7 @@
 # Vishesh_Gupta_IDS706_Week9
 ## Assignment 9 for Data Engineering
 
-[![CI](https://github.com/nogibjj/Vishesh_Gupta_IDS706_Week2/actions/workflows/CI.yml/badge.svg)](https://github.com/nogibjj/Vishesh_Gupta_IDS706_Week2/actions/workflows/CI.yml)
+[![CI](https://github.com/nogibjj/Vishesh_Gupta_IDS706_Week9/actions/workflows/CI.yml/badge.svg)](https://github.com/nogibjj/Vishesh_Gupta_IDS706_Week9/actions/workflows/CI.yml)
 
 ## Purpose:
 # Project: Cloud-Hosted Jupyter Notebook with Google Colab and GitHub Integration
@@ -43,6 +43,7 @@ To perform data manipulation, load your sample dataset and install necessary lib
 
 You can refer to [this video tutorial](https://youtu.be/6Egd-OMLLV4?si=1yDZW4WBE1pIwSMB) for step-by-step guidance on setting up Google Colab and connecting it to GitHub.
 
+### Analysis information 
 Here you can find:
 - .github contains the .yml file 
 - Makefile to automate the python task
