@@ -1,0 +1,4 @@
+make: Entering directory `/Users/visheshgupta/Desktop/Vishesh_Gupta_IDS706_Week9'
+pip install --upgrade pip && pip install -r requirements.txt
+make: Leaving directory `/Users/visheshgupta/Desktop/Vishesh_Gupta_IDS706_Week9'
+ 
